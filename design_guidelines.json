@@ -1,0 +1,301 @@
+{
+  "theme": "light",
+  "archetype": "SWISS & HIGH-CONTRAST + WARM MINIMALIST PDV",
+  "app_type": "dashboard",
+  "language": "pt-BR",
+  "typography": {
+    "font_family_heading": "Outfit, sans-serif",
+    "font_family_body": "DM Sans, sans-serif",
+    "font_family_mono_receipt": "JetBrains Mono, monospace",
+    "scale_px": {
+      "display": 48,
+      "h1": 36,
+      "h2": 28,
+      "h3": 20,
+      "body": 16,
+      "caption": 14
+    },
+    "letter_spacing": {
+      "headings": "-0.02em",
+      "mono_receipt": "0.02em",
+      "labels": "0.05em"
+    }
+  },
+  "colors": {
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#F8F9FA",
+        "on_bg": "#121826",
+        "on_bg_muted": "#64748B",
+        "roles": {
+          "border": "#E2E8F0",
+          "link": "#0F172A",
+          "error": "#DC2626",
+          "success": "#16A34A",
+          "warning": "#D97706"
+        }
+      },
+      {
+        "name": "panel",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#0F172A",
+        "on_bg_muted": "#64748B",
+        "roles": {
+          "border": "#E2E8F0",
+          "highlight": "#F1F5F9"
+        }
+      },
+      {
+        "name": "receipt_paper",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#000000",
+        "on_bg_muted": "#262626",
+        "roles": {
+          "border_dashed": "#404040",
+          "tag": "#171717"
+        }
+      },
+      {
+        "name": "kds_kitchen_surface",
+        "kind": "solid",
+        "bg": "#FEF3C7",
+        "on_bg": "#78350F",
+        "on_bg_muted": "#92400E",
+        "roles": {
+          "border": "#FDE68A"
+        }
+      },
+      {
+        "name": "badge_preparing",
+        "kind": "solid",
+        "bg": "#FEF3C7",
+        "on_bg": "#92400E",
+        "on_bg_muted": "#B45309"
+      },
+      {
+        "name": "badge_ready",
+        "kind": "solid",
+        "bg": "#DCFCE7",
+        "on_bg": "#15803D",
+        "on_bg_muted": "#166534"
+      },
+      {
+        "name": "badge_finished",
+        "kind": "solid",
+        "bg": "#F1F5F9",
+        "on_bg": "#475569",
+        "on_bg_muted": "#64748B"
+      },
+      {
+        "name": "active_cart_bar",
+        "kind": "solid",
+        "bg": "#0F172A",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "accent_price": "#38BDF8"
+        }
+      }
+    ],
+    "accent": "#0F172A",
+    "on_accent": "#FFFFFF",
+    "brand_amber": "#D97706",
+    "on_brand_amber": "#FFFFFF"
+  },
+  "entry_surfaces": {
+    "/": "split layout — interactive fast POS catalogue left, sticky dynamic cart & instant checkout right",
+    "/orders": "orders table and KDS cards grid with quick print action triggers and status toggles",
+    "/settings": "clean structured form panel for restaurant identity and printer configuration"
+  },
+  "layout_and_grids": {
+    "desktop_pos_split": "grid grid-cols-12 gap-6 h-[calc(100vh-4.5rem)]",
+    "pos_catalog_col": "col-span-12 lg:col-span-7 xl:col-span-8 flex flex-col overflow-hidden",
+    "pos_cart_col": "col-span-12 lg:col-span-5 xl:col-span-4 bg-white border border-slate-200 rounded-2xl flex flex-col h-full shadow-sm",
+    "orders_grid": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5",
+    "thermal_preview_container": "bg-slate-900/90 backdrop-blur-md p-6 flex items-center justify-center min-h-[500px] overflow-y-auto rounded-xl"
+  },
+  "receipt_print_system": {
+    "formats": [
+      {
+        "id": "58mm",
+        "name": "Térmica 58mm",
+        "paper_width_mm": "58mm",
+        "css_max_width": "54mm",
+        "chars_per_line": 32,
+        "font_size_px": "11px",
+        "line_height": "1.25"
+      },
+      {
+        "id": "80mm",
+        "name": "Térmica 80mm (Padrão)",
+        "paper_width_mm": "80mm",
+        "css_max_width": "72mm",
+        "chars_per_line": 48,
+        "font_size_px": "12.5px",
+        "line_height": "1.3"
+      },
+      {
+        "id": "a4",
+        "name": "Impressora Convencional (A4)",
+        "paper_width_mm": "210mm",
+        "css_max_width": "180mm",
+        "chars_per_line": 80,
+        "font_size_px": "14px",
+        "line_height": "1.4"
+      }
+    ],
+    "receipt_types": [
+      {
+        "id": "customer",
+        "title": "Comanda do Cliente",
+        "description": "Comanda completa com dados da lanchonete, produtos, observações, valores, desconto, forma de pagamento e agradecimento."
+      },
+      {
+        "id": "kitchen",
+        "title": "Comanda da Cozinha",
+        "description": "Comanda sem valores financeiros. Destaque em negrito para número do pedido, cliente, produtos, quantidades e observações/adicionais."
+      },
+      {
+        "id": "duplicate",
+        "title": "Segunda Via (Controle)",
+        "description": "Cópia com marca d'água/carimbo [2ª VIA] para conferência de caixa ou entrega."
+      }
+    ],
+    "css_print_media_rules": "@media print { @page { size: auto; margin: 0; } body * { visibility: hidden !important; } #printable-receipt, #printable-receipt * { visibility: visible !important; } #printable-receipt { position: absolute; left: 0; top: 0; width: 100%; margin: 0; padding: 4mm; color: #000000 !important; background: #ffffff !important; } nav, header, aside, .no-print { display: none !important; } }"
+  },
+  "key_workflows": {
+    "order_confirmation_modal": {
+      "title": "Pedido Confirmado com Sucesso!",
+      "actions": [
+        {
+          "label": "🖨️ Imprimir Comanda",
+          "description": "Abre o preview e dispara impressão direta",
+          "data_testid": "btn-print-order",
+          "variant": "default"
+        },
+        {
+          "label": "⚡ Imprimir e Novo Pedido",
+          "description": "Imprime em background e reseta carrinho imediatamente",
+          "data_testid": "btn-print-and-finalize",
+          "variant": "secondary"
+        },
+        {
+          "label": "Continuar Sem Imprimir",
+          "description": "Apenas salva o pedido no histórico e reseta carrinho",
+          "data_testid": "btn-no-print",
+          "variant": "ghost"
+        }
+      ]
+    },
+    "payment_methods": [
+      "PIX",
+      "Dinheiro",
+      "Cartão de Débito",
+      "Cartão de Crédito"
+    ],
+    "order_statuses": [
+      "Em preparo",
+      "Pronto",
+      "Finalizado",
+      "Cancelado"
+    ]
+  },
+  "image_urls": {
+    "products": [
+      {
+        "id": "burger-artesanal",
+        "name": "X-Burger Especial",
+        "category": "Lanches",
+        "url": "https://images.unsplash.com/photo-1550547660-d9450f859349?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwxfHxidXJnZXIlMjBzbmFjayUyMGZvb2QlMjByZXN0YXVyYW50fGVufDB8fHx8MTc4ODM5NjQ1N3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Hambúrguer artesanal suculento com queijo e salada"
+      },
+      {
+        "id": "burger-duplo",
+        "name": "X-Bacon Duplo",
+        "category": "Lanches",
+        "url": "https://images.unsplash.com/photo-1618538701087-fb7e0312de34?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHw0fHxidXJnZXIlMjBzbmFjayUyMGZvb2QlMjByZXN0YXVyYW50fGVufDB8fHx8MTc4ODM5NjQ1N3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Duas carnes grelhadas com queijo cheddar derretido e bacon crocante"
+      },
+      {
+        "id": "cheeseburger-classico",
+        "name": "Cheeseburger Clássico",
+        "category": "Lanches",
+        "url": "https://images.unsplash.com/photo-1667329829058-ac191ba4a905?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwyfHxidXJnZXIlMjBzbmFjayUyMGZvb2QlMjByZXN0YXVyYW50fGVufDB8fHx8MTc4ODM5NjQ1N3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Pão com gergelim, carne grelhada, queijo e molho especial"
+      },
+      {
+        "id": "combo-lanches",
+        "name": "Combo Artesanal Duplo",
+        "category": "Combos",
+        "url": "https://images.unsplash.com/photo-1610970878459-a0e464d7592b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwzfHxidXJnZXIlMjBzbmFjayUyMGZvb2QlMjByZXN0YXVyYW50fGVufDB8fHx8MTc4ODM5NjQ1N3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Dois hambúrgueres artesanais montados na tábua de madeira"
+      }
+    ]
+  },
+  "component_structure": {
+    "pages": [
+      {
+        "path": "/app/frontend/src/pages/Home.tsx",
+        "role": "PDV Principal (Novo Pedido, Catálogo de Produtos, Carrinho, Checkout e Modal de Impressão Rápida)"
+      },
+      {
+        "path": "/app/frontend/src/pages/Orders.tsx",
+        "role": "Histórico e Gestão de Pedidos (Filtros por status, visualização KDS / lista, botão de reimpressão direta)"
+      },
+      {
+        "path": "/app/frontend/src/pages/OrderDetails.tsx",
+        "role": "Detalhes do Pedido com painel completo de Impressão (Cliente / Cozinha / 2ª Via + seleção 58mm, 80mm, A4)"
+      },
+      {
+        "path": "/app/frontend/src/pages/Settings.tsx",
+        "role": "Configurações da Lanchonete (Nome, Razão Social, CNPJ, Endereço, Telefone/WhatsApp, Mensagem de Rodapé, Formato padrão de impressora)"
+      }
+    ],
+    "components": [
+      {
+        "path": "/app/frontend/src/components/ReceiptPrint.tsx",
+        "role": "Componente ultra-otimizado para impressão térmica e preview visual com fidelidade de papel, corte serrilhado e réguas monospace"
+      },
+      {
+        "path": "/app/frontend/src/components/PrintModal.tsx",
+        "role": "Modal de confirmação pós-pedido com ações 'Imprimir Comanda', 'Imprimir e Finalizar', 'Não Imprimir' + opções de formato"
+      },
+      {
+        "path": "/app/frontend/src/components/Header.tsx",
+        "role": "Barra de navegação superior com dados da lanchonete, status do caixa, links rápidos para PDV, Pedidos e Configurações"
+      },
+      {
+        "path": "/app/frontend/src/components/ProductCard.tsx",
+        "role": "Card de produto com imagem, preço em R$, badge de categoria e botão de adição rápida com seletor de observação"
+      },
+      {
+        "path": "/app/frontend/src/components/CartSidebar.tsx",
+        "role": "Painel lateral com itens, adicionais, observações por item, desconto em R$, seleção de pagamento (PIX, Dinheiro, Débito, Crédito) e botão Confirmar Pedido"
+      }
+    ]
+  },
+  "motion_and_interactions": {
+    "hover_states": "hover:border-slate-400 hover:shadow-md transition-all duration-150",
+    "cart_item_add": "scale-[1.02] transition-transform duration-100 ease-out",
+    "receipt_preview_animation": "animate-in fade-in zoom-in-95 duration-200"
+  },
+  "accessibility_and_contrast": {
+    "wcag_level": "WCAG AA (4.5:1 ratio minimum on all UI text)",
+    "thermal_print_contrast": "Pure monochrome (#000000 on #FFFFFF) with sharp font rendering and high-contrast lines for thermal print heads",
+    "data_testid_convention": "kebab-case semantic testids on all buttons, inputs, modals and order print triggers"
+  },
+  "instructions_to_main_agent": [
+    "1. Adote o estilo Claro e Minimalista no frontend (Tailwind v4 tokens em /app/frontend/src/index.css com Outfit para títulos e DM Sans para corpo).",
+    "2. Implemente o componente ReceiptPrint com suporte rigoroso a 3 formatos: 58mm, 80mm (padrão) e A4.",
+    "3. Crie duas variantes de comanda: 'Comanda do Cliente' (com valores financeiros, descontos e pagamento) e 'Comanda da Cozinha' (foco em itens, quantidades, adicionais e observações, SEM valores financeiros).",
+    "4. No fluxo pós-confirmação de pedido, exiba imediatamente o modal com as 3 opções obrigatórias: 'Imprimir Comanda', 'Imprimir e Finalizar' e 'Não Imprimir'.",
+    "5. Garanta que o botão '🖨️ Imprimir' acione `window.print()` e utilize CSS `@media print` para ocultar toda a interface e imprimir estritamente o recibo com largura exata.",
+    "6. No histórico de pedidos (/orders) e detalhes (/orders/:id), disponibilize o botão de reimpressão com um clique e seleção de 2ª via.",
+    "7. Crie tela de Configurações (/settings) persistindo dados da lanchonete (Nome, Endereço, Telefone, Rodapé, Largura padrão da impressora) no backend MongoDB ou localStorage caso o backend esteja offline.",
+    "8. Todas as ações e botões interativos DEVEM conter `data-testid` legíveis (ex: `data-testid='btn-confirm-order'`, `data-testid='btn-print-receipt'`, `data-testid='select-printer-width'`)."
+  ]
+}
