@@ -1,10 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
-import { ChefHat, ClipboardList, Settings as SettingsIcon, ShoppingCart } from "lucide-react";
+import { ChefHat, ClipboardList, Settings as SettingsIcon, ShoppingCart, UtensilsCrossed } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const LINKS = [
   { to: "/", label: "PDV", icon: ShoppingCart, testId: "nav-pdv" },
   { to: "/orders", label: "Pedidos", icon: ClipboardList, testId: "nav-orders" },
+  { to: "/products", label: "Produtos", icon: UtensilsCrossed, testId: "nav-products" },
   { to: "/settings", label: "Configurações", icon: SettingsIcon, testId: "nav-settings" },
 ];
 

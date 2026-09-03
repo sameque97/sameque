@@ -38,6 +38,23 @@ class ProductCreate(BaseModel):
     image_url: str = ""
 
 
+class ProductUpdate(BaseModel):
+    name: str
+    category: str
+    price: float
+    description: str = ""
+    image_url: str = ""
+    active: bool = True
+
+
+class ActiveUpdate(BaseModel):
+    active: bool
+
+
+class CategoryPayload(BaseModel):
+    name: str
+
+
 class OrderItem(BaseModel):
     product_id: str
     name: str

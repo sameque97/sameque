@@ -13,6 +13,15 @@ export interface Product {
   active: boolean;
 }
 
+export interface ProductPayload {
+  name: string;
+  category: string;
+  price: number;
+  description: string;
+  image_url: string;
+  active: boolean;
+}
+
 export interface OrderItem {
   product_id: string;
   name: string;
